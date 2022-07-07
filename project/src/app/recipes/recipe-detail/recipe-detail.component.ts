@@ -26,5 +26,8 @@ export class RecipeDetailComponent implements OnInit {
   onAddToShoppinglist() {
     this.recipeService.addIngredientToShoppinglist(this.recipe.ingredients);
   }
-  onEditRecipe() {}
+  onEditRecipe() {
+    // this.router.navigate(['edit'], { relativeTo: this.route });
+    this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route });
+  }
 }

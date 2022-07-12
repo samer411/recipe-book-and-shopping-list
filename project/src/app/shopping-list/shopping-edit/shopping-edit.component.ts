@@ -8,6 +8,9 @@ import { ShoppingListService } from '../shoppingList.services';
   selector: 'app-shopping-edit',
   templateUrl: './shopping-edit.component.html',
   styleUrls: ['./shopping-edit.component.css'],
+  providers: [
+    { provide: ShoppingEditComponent, useValue: ShoppingListService },
+  ],
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy {
   @ViewChild('f', { static: false }) slForm!: NgForm;

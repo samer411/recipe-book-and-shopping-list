@@ -6,11 +6,21 @@
     <div class="navbar-default">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
-        <li routerLinkActive="active" routerLink="/shopping-list">
+        <li routerLinkActive="active">
+          <a routerLink="/auth">Authenticate</a>
+        </li>
+        <li
+          routerLinkActive="active"
+          routerLink="/shopping-list"
+          style="cursor: pointer"
+        >
           <a>Shopping List</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a style="cursor: pointer">Log Out</a>
+        </li>
         <li class="dropdown" appDropdown>
           <a class="dropdown-toggle" role="button"
             >Manage <span class="caret"></span
@@ -19,7 +29,9 @@
             <li>
               <a style="cursor: pointer" (click)="onSaveData()">Save Data</a>
             </li>
-            <li><a style="cursor: pointer">Fetch Data </a></li>
+            <li>
+              <a style="cursor: pointer" (click)="onFetchData()">Fetch Data </a>
+            </li>
           </ul>
         </li>
       </ul>

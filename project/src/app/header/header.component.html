@@ -5,8 +5,10 @@
     </div>
     <div class="navbar-default">
       <ul class="nav navbar-nav">
-        <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
+          <a routerLink="/recipes">Recipes</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="!isAuthenticated">
           <a routerLink="/auth">Authenticate</a>
         </li>
         <li
@@ -18,10 +20,10 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a style="cursor: pointer">Log Out</a>
+        <li *ngIf="isAuthenticated">
+          <a style="cursor: pointer" (click)="onlogOut()">Log Out</a>
         </li>
-        <li class="dropdown" appDropdown>
+        <li class="dropdown" *ngIf="isAuthenticated" appDropdown>
           <a class="dropdown-toggle" role="button"
             >Manage <span class="caret"></span
           ></a>
